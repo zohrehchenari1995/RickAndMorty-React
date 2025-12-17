@@ -1,0 +1,267 @@
+/* ------------------------------------------NAVBAR FOR MOBILE AND DESKTOP */
+/* #root{
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+} */
+
+.all-navbar {
+  background-color: var(--slate-700);
+}
+/* for fix navbar content center (all screen) */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0.2rem;
+  border-radius: 1rem;
+}
+.navbar__logo {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.navbar__search {
+  border-radius: 0.4rem;
+  background-color: var(--slate-500);
+  padding: 0.2rem;
+  /* color: var(--slate-900); */
+}
+.navbar__result {
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.navbar__icon {
+  position: relative;
+}
+.navbar__badge-icon {
+  background-color: var(--rose-500);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  font-size: 8px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-100);
+}
+.navbar__hearticon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--rose-600);
+}
+.navbar__search::placeholder{
+  color: var(--slate-300);
+}
+/* END NAVBAR FOR MOBILE AND DESKTOP-------------------------------------- */
+
+/*-------------------------- STYLE FOR CHARACTER LIST && CHARACTER DETAIL  */
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 100%;
+}
+/* END STYLE FOR CHARACTER LIST && CHARACTER DETAIL --------------------   */
+
+/*-------------------------------------------------------- CHARACTER LIST  */
+.all-character__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.character-list {
+  background-color: var(--slate-800);
+  /* padding: 0 0.2rem; */
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem;
+}
+.character__image {
+
+  border-radius: 1rem;
+}
+.character__name {
+
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.status__color {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--rose-600);
+  border-radius: 50%;
+  margin-left: 0.3rem;
+}
+.status__color-live {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--green-600);
+  border-radius: 50%;
+  margin-left: 0.3rem;
+}
+.character__status {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eyeCheck {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--rose-600);
+}
+/* END CHARACTER LIST----------------------------------------------------  */
+
+/* -------------------------------------------------------CHARACTER DETAIL */
+.character-detail {
+  display: flex;
+  flex-direction: column;
+}
+.all__detail,
+.all__episode {
+  background-color: var(--slate-800);
+  margin-bottom: 1rem;
+  padding: 1rem 0.8rem;
+  border-radius: 1rem;
+}
+.all__detail{
+  display: flex;
+  justify-content: start;
+  /* align-items: center; */
+ 
+}
+.character__status-detail {
+  display: flex;
+  align-items: center;
+}
+.status__description{
+  font-weight: bold;
+}
+
+/* .character__image-detail{
+  margin-right: 5rem;
+} */
+.character__location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.location__detail{
+  margin-bottom: 1rem;
+}
+.location__title{
+  color: var(--slate-500);
+}
+.location__detail{
+  font-weight: bold;
+}
+.location__button-add{
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--slate-500);
+  color: var(--slate-200);
+  font-weight: bold;
+}
+.all__episode{
+  display: flex;
+  flex-direction: column;
+}
+.episode__title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--slate-500);
+}
+.episode__icon{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.episode__role{
+  margin-bottom: 0.5rem;
+}
+
+/* END CHARACTER DETAIL--------------------------------------------------- */
+
+/*-------------------------------------------------------DESKTOP APPROUCH  */
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+  .navbar__search {
+    padding: 0.5rem;
+  }
+  .navbar__result {
+    font-size: 1rem;
+  }
+  .navbar__hearticon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .navbar__badge-icon {
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .character-detail {
+    flex: 1;
+  }
+  .all-character__list {
+    width: 25rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 1.5rem 4rem;
+  }
+  .navbar__logo {
+    font-size: 1.4rem;
+  }
+  .navbar__search {
+    padding: 0.8rem;
+  }
+  .navbar__result {
+    font-size: 1.2rem;
+  }
+  .navbar__hearticon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .navbar__badge-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+  .main {
+    padding: 0 4rem;
+  }
+}
+
+/* END DESKTOP APPROUCH--------------------------------------------------  */
