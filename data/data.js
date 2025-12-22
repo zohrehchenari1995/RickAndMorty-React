@@ -63,7 +63,7 @@ export const episodes = [
     episode: "S01E01",
     characters: [],
     url: "https://rickandmortyapi.com/api/episode/1",
-    created: "2017-11-10T12:56:33.798Z",
+    created: "2025-11-10T12:56:33.798Z",
   },
   {
     id: 2,
@@ -71,6 +71,6 @@ export const episodes = [
     air_date: "December 9, 2013",
     episode: "S01E02",
     url: "https://rickandmortyapi.com/api/episode/2",
-    created: "2017-11-10T12:56:33.916Z",
+    created: "2025-11-10T12:56:33.916Z",
   },
 ];

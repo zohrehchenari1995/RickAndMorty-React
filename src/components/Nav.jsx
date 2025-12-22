@@ -1,7 +1,7 @@
 
  import { HeartIcon } from '@heroicons/react/24/outline'
 
- function NavBar() {
+ function Nav() {
    return (
      <nav className="all-navbar">
      <div className="container">
@@ -23,4 +23,4 @@
    )
  }
  
- export default NavBar
+ export default Nav
