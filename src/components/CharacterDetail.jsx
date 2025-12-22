@@ -1,7 +1,7 @@
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
-import { episodes } from "../../data/data";
+import { character,episodes } from "../../data/data";
 
-function CharacterDetail({ character }) {
+function CharacterDetail() {
   return (
     <div className="character-detail">
       <div className="all__detail">
