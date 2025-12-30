@@ -1,4 +1,3 @@
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --slate-900: #0f172a;
@@ -20,9 +19,10 @@ body {
   min-height: 100vh;
   background-color: var(--slate-900);
   color: var(--slate-300);
+  overflow-x: hidden;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

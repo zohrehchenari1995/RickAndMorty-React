@@ -8,7 +8,7 @@ import { children } from 'react'
      <div className="container">
        <div className="navbar container">
        <Logo/>
-       <Search/>
+  
         {children}
         <Favorite/>
        
@@ -28,10 +28,10 @@ import { children } from 'react'
   )
  }
 
- export function Search(){
+ export function Search({query, setQuery}){
   return(
      <div className="">
-          <input type="text" className="navbar__search" placeholder="search..."/>
+          <input value={query} onChange={(e)=> setQuery(e.target.value)}  type="text" className="navbar__search" placeholder="search..."/>
         </div>
   )
  }

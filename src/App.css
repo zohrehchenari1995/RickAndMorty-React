@@ -23,6 +23,7 @@
 .navbar__logo {
   font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .navbar__search {
   border-radius: 0.4rem;
@@ -36,6 +37,7 @@
 }
 .navbar__icon {
   position: relative;
+  cursor: pointer;
 }
 .navbar__badge-icon {
   background-color: var(--rose-500);
@@ -69,11 +71,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  width: 100%;
 }
+
 /* END STYLE FOR CHARACTER LIST && CHARACTER DETAIL --------------------   */
 
 /*-------------------------------------------------------- CHARACTER LIST  */
+
 .all-character__list {
   display: flex;
   flex-direction: column;
@@ -88,7 +91,12 @@
   justify-content: space-between;
   padding: 0.5rem 0.8rem;
 }
-
+.character-list > div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .character__image {
   border-radius: 1rem;
 }
@@ -96,6 +104,7 @@
   width: 98px;
   height: 100px;
   border-radius: 0.5rem;
+  margin-right: 0.4rem;
 }
 .character__name {
   font-weight: bold;
@@ -115,7 +124,6 @@
   height: 12px;
   background-color: var(--green-600);
   border-radius: 50%;
-  /* margin-right: 0.3rem; */
 }
 .character__status {
   display: flex;
@@ -127,7 +135,9 @@
 .all-character__list .character-list:nth-child(2) .character__status {
   margin-left: 0.3rem;
 }
-
+.character__eyeCheck{
+  background-color: transparent;
+}
 .eyeCheck {
   width: 1.2rem;
   height: 1.2rem;
@@ -259,7 +269,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 2rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .character-detail {
     flex: 1;
@@ -273,7 +283,9 @@
     border-radius: 1rem;
   }
   .all-character__list {
-    width: 19rem;
+    /* width: 100%; */
+    width: 28rem;
+    
   }
   .episode__role {
     font-size: 1.1rem;
