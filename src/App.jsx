@@ -1,7 +1,7 @@
 import "./App.css";
 import CharacterList from "./components/CharacterList";
 import CharacterDetail from "./components/CharacterDetail";
-import Nav, { NavbarResult, Search } from "./components/Nav";
+import Nav, { Favorite, NavbarResult, Search } from "./components/Nav";
 import { useEffect, useState } from "react";
 import { allCharacters } from "../data/data";
 import { Toaster, toast } from "react-hot-toast";
@@ -15,12 +15,21 @@ function App() {
   const [query, setQuery] = useState("");
   // state for show detaile after select character
   const [selectedId, setSelectedId] = useState(null);
+  // state for favorite for heart icon dynamic
+  const [favorite, setFavorite] = useState([]);
 
+  // event handler function
   const handleshowDetail = (id) => {
     // for dubleclick close
     setSelectedId((prevId) => (prevId === id ? null : id));
   };
   console.log(selectedId);
+
+  const handleAddFavorite = (char) => {
+    setFavorite((prevFav) => [...prevFav, char]);
+  };
+  // check for exist character in favorite list or not exist
+  const isAddToFavorite = favorite.map((fav) => fav.id).includes(selectedId);
 
   // fetchData with useEffect in render logic
   useEffect(() => {
@@ -56,6 +65,7 @@ function App() {
       <Nav>
         <Search query={query} setQuery={setQuery} />
         <NavbarResult numOfResult={characters.length} />
+        <Favorite numOfFavorite={favorite.length} />
       </Nav>
 
       <Main characters={characters}>
@@ -65,7 +75,11 @@ function App() {
           onSelectedCharacter={handleshowDetail}
           selectedId={selectedId}
         />
-        <CharacterDetail selectedId={selectedId} />
+        <CharacterDetail
+          selectedId={selectedId}
+          onAddFavorite={handleAddFavorite}
+        isAddToFavorite={isAddToFavorite}
+        />
       </Main>
     </div>
   );

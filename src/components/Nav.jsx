@@ -10,7 +10,7 @@ import { children } from 'react'
        <Logo/>
   
         {children}
-        <Favorite/>
+        
        
         
       </div>
@@ -42,11 +42,11 @@ export function NavbarResult({numOfResult}){
   )
  }
 
- export function Favorite(){
+ export function Favorite({numOfFavorite}){
   return(
      <span className="navbar__icon">
           <HeartIcon className="navbar__hearticon"/>
-          <div className="navbar__badge-icon">3</div>
+          <div className="navbar__badge-icon">{numOfFavorite}</div>
           </span>
   )
  }

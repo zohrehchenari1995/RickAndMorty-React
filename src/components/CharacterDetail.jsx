@@ -5,7 +5,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
 
-function CharacterDetail({ selectedId, setSelectedId }) {
+function CharacterDetail({ selectedId,onAddFavorite,isAddToFavorite }) {
 // state for fetch chracterDetail
   const [character ,setCharacter] = useState(null);
   // state for  loading characterDetail
@@ -86,7 +86,11 @@ function CharacterDetail({ selectedId, setSelectedId }) {
           <div className="character__location">
             <span className="location__title">last Know location :</span>
             <span className="location__detail">{character.location.name}</span>
-            <button className="location__button-add">Add To Favorite</button>
+            {
+             isAddToFavorite? (<p>Already Added To Favorite ✅</p>):
+              (<button onClick={()=>onAddFavorite(character)} 
+              className="location__button-add">Add To Favorite</button>
+            )}
           </div>
         </div>
       </div>
