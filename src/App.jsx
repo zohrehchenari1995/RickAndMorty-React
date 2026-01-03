@@ -23,7 +23,7 @@ function App() {
     // for dubleclick close
     setSelectedId((prevId) => (prevId === id ? null : id));
   };
-  console.log(selectedId);
+  // console.log(selectedId);
 
   const handleAddFavorite = (char) => {
     setFavorite((prevFav) => [...prevFav, char]);
@@ -33,35 +33,48 @@ function App() {
 
   // fetchData with useEffect in render logic
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     async function fetchData() {
       // update state for loading in first time
       try {
         setIsLoading(true);
         const { data } = await axios.get(
-          `https://rickandmortyapi.com/api/character?name=${query}`
+          `https://rickandmortyapi.com/api/character?name=${query}`,
+          { signal }
         );
 
-        setCharacters(data.results.slice(0, 3));
+        setCharacters(data.results.slice(0, 4));
       } catch (error) {
         // for not show characters when have error
-        setCharacters([]);
-        toast.error(error.response.data.error);
+        if(!axios.isCancel(error)){
+          setCharacters([]);
+          toast.error(error.response.data.error);
+        }
+    
+       
       } finally {
         // for is not repeate setIsLoading in try and catch
         setIsLoading(false);
       }
     }
     // filter for if user type less 3 string not show result
-    if (query.length < 3) {
-      setCharacters([]);
-      return;
-    }
+    // if (query.length < 3) {
+    //   setCharacters([]);
+    //   return;
+    // }
     fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, [query]);
 
   return (
     <div className="app">
       <Toaster />
+
       <Nav>
         <Search query={query} setQuery={setQuery} />
         <NavbarResult numOfResult={characters.length} />
@@ -78,7 +91,7 @@ function App() {
         <CharacterDetail
           selectedId={selectedId}
           onAddFavorite={handleAddFavorite}
-        isAddToFavorite={isAddToFavorite}
+          isAddToFavorite={isAddToFavorite}
         />
       </Main>
     </div>
