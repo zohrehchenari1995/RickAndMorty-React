@@ -214,6 +214,7 @@
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: var(--slate-400);
+  background: transparent;
 }
 .episode__icon {
   width: 1.4rem;
